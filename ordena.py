@@ -139,13 +139,13 @@ def comparar_todos_algoritmos(resultados):
 
 def salvar_tabela_tempos(resultados):
     with open('tabela_tempos.txt', 'w') as f:
-        # Cabeçalho
+        
         f.write('Tamanho')
         for nome in resultados.keys():
             f.write(f'\t{nome}')
         f.write('\n')
         
-        # Dados
+        
         for i, tamanho in enumerate(tamanhos_entradas):
             f.write(f'{tamanho}')
             for nome in resultados.keys():
@@ -157,14 +157,14 @@ def gerar_arquivo_entrada(nome_arquivo, tamanho):
         for _ in range(tamanho):
             arquivo.write(str(random.randint(1, tamanho)) + '\n')
 
-# Lista de tamanhos de entradas
+
 tamanhos_entradas = [50, 75, 100, 150, 200, 300, 400, 600, 800, 1200, 1600, 2400, 3200, 4800, 6400, 9600, 12800, 16000, 20000, 25000]
 
-# Gera arquivos de entrada
+
 for tamanho in tamanhos_entradas:
     gerar_arquivo_entrada(f'entrada_{tamanho}.txt', tamanho)
 
-# Testa todos os algoritmos de ordenação
+
 algoritmos = [
     (bubble_sort, 'Bubble Sort', funcao_ajuste_quadratica),
     (insertion_sort, 'Insertion Sort', funcao_ajuste_quadratica),
